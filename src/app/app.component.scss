@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    .encabezado {
+        @apply h-xl flex justify-between shadow bg-white text-gray-700;
+    }
+
+    .contenedor {
+        @apply flex items-center p-6 mr-2;
+    }
+
+    .logo {
+        @apply h-10 w-10 mr-2
+    }
+
+    .titulo {
+        @apply text-lg font-semibold text-gray-900 uppercase;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+    margin: 0 auto;
+
+    input {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        font-size: 16px;
+    }
+
+    button {
+        background-color: #904caf;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tarjeta {
+    @apply rounded-xl text-gray-700 text-lg bg-gray-50 shadow-gray-300 shadow-md overflow-hidden p-4 ;
+    margin: 20px auto;
+    width: 700px;
+    figure {
+        img {
+            height: 400px;
+            width: 300px;
+        }
+    }
+}
