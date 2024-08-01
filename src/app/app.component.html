@@ -1,0 +1,47 @@
+<header class="encabezado">
+  <nav class="contenedor">
+    <img src="assets/images/logo.svg" alt="logo weincode" class="logo">
+    <a href="https://youtube.com/c/weincode" class="titulo">
+      <h1>Ejemplo Gemini Angular</h1>
+    </a>
+  </nav>
+</header>
+<main>
+  <section>
+    <h2>Ejemplo Texto generativo</h2>
+    <form [formGroup]="formularioDePregunta" (ngSubmit)="TestGeminiPro()">
+      <input type="text" formControlName="prompt" placeholder="ingrese su nombre" />
+      <button type="submit">Enviar</button>
+    </form>
+
+    <div class="tarjeta">
+      <h2>Respuesta de Gemini: </h2>
+      @if(respuestaGemini == '' && consultarTexto == true) {
+        <app-circular-progress></app-circular-progress>
+      }
+      <h3>{{respuestaGemini}}</h3>
+    </div>
+    <section class="tarjeta">
+
+      <div class="@apply flex justify-between pr-2">
+        <figure>
+          <img src="assets/images/lior.jpeg" alt="imagen de gato recostado en la pared tranquilamente">
+          <br>
+        </figure>
+        <form [formGroup]="formularioDePreguntaImagen" (ngSubmit)="imageReader()" class="@apply ">
+          <input type="text" formControlName="prompt" placeholder="ingrese su nombre" />
+          <button type="submit">Enviar</button>
+          <h2>Respuesta de Gemini: </h2>
+          @if(respuestaGeminiImagen == '' && consultarImagen == true) {
+            <app-circular-progress></app-circular-progress>
+          }
+          <p>{{respuestaGeminiImagen}}</p>
+        </form>
+      </div>
+    </section>
+  </section>
+  <router-outlet></router-outlet>
+</main>
+<footer>
+
+</footer>
